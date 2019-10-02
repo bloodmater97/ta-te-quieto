@@ -74,7 +74,7 @@ function empate(){
 function verificarGanador(){
    turno == 1 ? "O":"X"//cada if verifica todas las posiciones existentes en el juego
    if (columna[0][0] === turno && columna [0][1] === turno && columna [0][2] === turno){
-
+     
      document.getElementsById("zelda1").style.color = "red";
      document.getElementsById("zelda2").style.color = "red";
      document.getElementsById("zelda3").style.color = "red";
