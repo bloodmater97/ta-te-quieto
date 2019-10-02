@@ -6,10 +6,18 @@ table{
     color: white;
     border-color: chartreuse;
 }
+
 td,tr{
     padding: 4em;
 }
+
 h1{
     text-align: center;
     color: darkmagenta;
+}
+
+#datos{
+    color:white;
+    text-align: center;
+    padding:4em;
 }

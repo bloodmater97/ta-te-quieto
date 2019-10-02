@@ -5,6 +5,8 @@ var j2 = "O"; //Declaro la variable del jugador 2
 var contador = 0; // Hago un contador que va a ir alternando los turnos
 var columna = [[1,2,3],[4,5,6],[7,8,9]];
 var k=1;
+var puedeSeguir = true;
+
 
 //Esto es para hacer que se muestere la tabla por JavaScript
 function genera_tabla() {
@@ -50,49 +52,60 @@ function turnos (a) {
       turno = 0;
       document.getElementById(a).innerHTML= j1;
       verificarGanador();
+      document.getElementById("datos").innerHTML = "Turno del Jugador 1";
     }
     else {
       turno = 1;
       document.getElementById(a).innerHTML= j2;
       verificarGanador();
+      document.getElementById("datos").innerHTML = "Turno del jugador 2";
     }
   }
+}
+
+function empate(){
+ /* document.getElementById("datos").innerHTML= "Nadie ganó";
+ */
+  
 }
 
 //Funcion que verifica si alguien gano
 function verificarGanador(){
    turno == 1 ? "O":"X"//cada if verifica todas las posiciones existentes en el juego
    if (columna[0][0] === turno && columna [0][1] === turno && columna [0][2] === turno){
+     
+     pueseSeguir = false;
      document.getElementsById("zelda1").style.color = "red";
      document.getElementsById("zelda2").style.color = "red";
      document.getElementsById("zelda3").style.color = "red";
      return false;
     } else if (columna[1][0] === turno && columna[1][1] === turno && columna[1][2] === turno){
-
+      
 
     } else if (columna[2][0] === turno && columna[2][1] === turno && columna[2][2] === turno){
-
+      
 
     } else if (columna[0][0] === turno && columna[1][0] === turno && columna[2][0] === turno){
-
+      
 
     } else if (columna[0][1] === turno && columna[1][1] === turno && columna[2][1] === turno){
-
+      
 
     } else if (columna[0][2] === turno && columna[1][2] === turno && columna[2][2] === turno){
-
+      
 
     } else if (columna[0][0] === turno && columna[1][1] === turno && columna[2][2] === turno){
-
+      
 
     } else if (columna[0][2] === turno && columna[1][1] === turno && columna[2][0] === turno){
-
+      
      
   }
   else{
-    empate()
-  }
+    
+      empate()}
 }
+
 
 function victoria() {
 //va a pintar la hilera ganadora.
