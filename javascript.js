@@ -67,14 +67,14 @@ function empate(){
  /* document.getElementById("datos").innerHTML= "Nadie ganó";
  */
   
- 
+
 }
 
 //Funcion que verifica si alguien gano
 function verificarGanador(){
    turno == 1 ? "O":"X"//cada if verifica todas las posiciones existentes en el juego
    if (columna[0][0] === turno && columna [0][1] === turno && columna [0][2] === turno){
-     
+
      pueseSeguir = false;
      document.getElementsById("zelda1").style.color = "red";
      document.getElementsById("zelda2").style.color = "red";
@@ -105,7 +105,8 @@ function verificarGanador(){
   else{
     
       empate()}
-}
+  }
+
 
 
 function victoria() {
