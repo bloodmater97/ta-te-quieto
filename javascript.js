@@ -67,6 +67,7 @@ function empate(){
  /* document.getElementById("datos").innerHTML= "Nadie ganó";
  */
   
+ 
 }
 
 //Funcion que verifica si alguien gano
