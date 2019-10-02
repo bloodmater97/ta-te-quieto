@@ -64,7 +64,7 @@ function turnos (a) {
 }
 
 function empate(){
- /* document.getElementById("datos").innerHTML= "Nadie ganó";
+ /* document.getElementById("datos").innerHTML= "¿Quién es tan fracasado para perder en el Ta Te Ti XD? Altos toooontos";
  */
   
 
@@ -75,11 +75,12 @@ function verificarGanador(){
    turno == 1 ? "O":"X"//cada if verifica todas las posiciones existentes en el juego
    if (columna[0][0] === turno && columna [0][1] === turno && columna [0][2] === turno){
 
-     pueseSeguir = false;
      document.getElementsById("zelda1").style.color = "red";
      document.getElementsById("zelda2").style.color = "red";
      document.getElementsById("zelda3").style.color = "red";
+     pueseSeguir = false;
      return false;
+
     } else if (columna[1][0] === turno && columna[1][1] === turno && columna[1][2] === turno){
       
 
@@ -104,8 +105,9 @@ function verificarGanador(){
   }
   else{
     
-      empate()}
+      empate()
   }
+}
 
 
 
