@@ -63,10 +63,10 @@ function turnos (a) {
 function verificarGanador(){
    turno == 1 ? "O":"X"//cada if verifica todas las posiciones existentes en el juego
    if (columna[0][0] === turno && columna [0][1] === turno && columna [0][2] === turno){
-
-     document.getElementById("zelda1").style.color = "red";
-     document.getElementById("zelda2").style.color = "red";
-     document.getElementById("zelda3").style.color = "red";
+     
+     columna[0][0].setAttribute("backgroundcolor", "red");
+     columna[0][1].setAttribute("backgroundcolor", "red");
+     columna[0][2].setAttribute("backgroundcolor", "red");
 
   } else if (columna[1][0] === turno && columna[1][1] === turno && columna[1][2] === turno){
 
