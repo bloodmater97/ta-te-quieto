@@ -99,6 +99,3 @@ function victoria() {
 //va a determinar cual jugador gano dependiendo el turno. 
 //poner un gif encima del tablero.  
 }
-
-
-//tumamaeshombre
