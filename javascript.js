@@ -51,14 +51,14 @@ function turnos (a) {
     if (turno === 1) {
       turno = 0;
       document.getElementById(a).innerHTML= j1;
-      verificarGanador();
       document.getElementById("datos").innerHTML = "Turno del Jugador 1";
+      verificarGanador();
     }
     else {
       turno = 1;
       document.getElementById(a).innerHTML= j2;
-      verificarGanador();
       document.getElementById("datos").innerHTML = "Turno del jugador 2";
+      verificarGanador();
     }
   }
 }
