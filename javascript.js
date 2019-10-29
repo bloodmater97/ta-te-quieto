@@ -6,7 +6,7 @@ var contador = 0; // Hago un contador que va a ir alternando los turnos
 var columna = [[],[],[]];
 var k=1;
 var puedeSeguir = true;//Esto va a ver si se puede seguir jugando o no, ya que si hay una combinación ganadora no va a permitir que se siga jugando.
-var todasOcupadas = true;//
+var todasOcupadas = false;//
 
 
 //Esto es para hacer que se muestere la tabla por JavaScript
@@ -57,11 +57,14 @@ function turnos (a) {
         verificarGanador();
         turno = 0;
       }
-      else {
+      else if (turno === 0) {
         document.getElementById(a).innerHTML= j2;
         document.getElementById("datos").innerHTML = "Turno del jugador 2";
         verificarGanador();
         turno = 1;
+      }
+      else if (todasOcupadas == true) {
+        document.getElementById("datos").innerHTML = "Fin del juego";
       }
     }
   }
@@ -98,6 +101,7 @@ function verificarGanador(){
      document.getElementById("zelda2").style.color = "red";
      document.getElementById("zelda3").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[1][0] === turno && columna[1][1] === turno && columna[1][2] === turno){
       
@@ -105,6 +109,7 @@ function verificarGanador(){
      document.getElementById("zelda5").style.color = "red";
      document.getElementById("zelda6").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[2][0] === turno && columna[2][1] === turno && columna[2][2] === turno){
       
@@ -112,6 +117,7 @@ function verificarGanador(){
      document.getElementById("zelda8").style.color = "red";
      document.getElementById("zelda9").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[0][0] === turno && columna[1][0] === turno && columna[2][0] === turno){
 
@@ -119,6 +125,7 @@ function verificarGanador(){
      document.getElementById("zelda4").style.color = "red";
      document.getElementById("zelda7").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[0][1] === turno && columna[1][1] === turno && columna[2][1] === turno){
 
@@ -126,6 +133,7 @@ function verificarGanador(){
      document.getElementById("zelda5").style.color = "red";
      document.getElementById("zelda8").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[0][2] === turno && columna[1][2] === turno && columna[2][2] === turno){
 
@@ -133,6 +141,7 @@ function verificarGanador(){
      document.getElementById("zelda6").style.color = "red";
      document.getElementById("zelda9").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[0][0] === turno && columna[1][1] === turno && columna[2][2] === turno){
 
@@ -140,6 +149,7 @@ function verificarGanador(){
      document.getElementById("zelda5").style.color = "red";
      document.getElementById("zelda9").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
     } else if (columna[0][2] === turno && columna[1][1] === turno && columna[2][0] === turno){
 
@@ -147,19 +157,25 @@ function verificarGanador(){
      document.getElementById("zelda5").style.color = "red";
      document.getElementById("zelda7").style.color = "red";
      puedeSeguir = false;
+     document.getElementById("datos").innerHTML = "Fin del juego";
 
   }
-  else{
+}
+  if (puedeSeguir=== true){
     for (var i=1; i<=9; i++) {
       if (document.getElementById("zelda" + i).innerHTML==""){
         todasOcupadas=false;
+      } else { 
+        puedeSeguir = false;
+        document.getElementById("datos").innerHTML = "empate";
       }
     }
-    if (todasOcupadas==true){
-      alert("Empataron, gg. Altos tontos xd");
-    }
   }
-}
+  
+ 
+  
+
+
 
 function victoria() {
 //va a determinar cual jugador gano dependiendo el turno. 
