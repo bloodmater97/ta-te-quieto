@@ -63,9 +63,6 @@ function turnos (a) {
         verificarGanador();
         turno = 1;
       }
-      else if (todasOcupadas == true) {
-        document.getElementById("datos").innerHTML = "Fin del juego";
-      }
     }
   }
 }
@@ -73,21 +70,21 @@ function turnos (a) {
 function positions(a) {//El parametro a tiene los Id de las celdas. Osea que si a es = al Id de la celda que se está clickeando, la "X" o la "O" que se va a poner en ese lugar también la va a tener la matriz. Al tener este dato la matriz después va a poder verificar quién ganó.
   if(a == "zelda1"){
     columna[0][0] = turno;
-  } else if (a == "zelda2") {
+  } else if (a == "zelda2"){
     columna[0][1] = turno;
-  } else if (a == "zelda3") {
+  } else if (a == "zelda3"){
     columna[0][2] = turno;
-  } else if (a == "zelda4") {
+  } else if (a == "zelda4"){
     columna[1][0] = turno;
-  } else if (a == "zelda5") {
+  } else if (a == "zelda5"){
     columna[1][1] = turno;
-  } else if (a == "zelda6") {
+  } else if (a == "zelda6"){
     columna[1][2] = turno;
-  } else if (a == "zelda7") {
+  } else if (a == "zelda7"){
     columna[2][0] = turno;
-  } else if (a == "zelda8") {
+  } else if (a == "zelda8"){
     columna[2][1] = turno;
-  } else if (a == "zelda9") {
+  } else if (a == "zelda9"){
     columna[2][2] = turno;
   }
 }
@@ -158,26 +155,22 @@ function verificarGanador(){
      document.getElementById("zelda7").style.color = "red";
      puedeSeguir = false;
      document.getElementById("datos").innerHTML = "Fin del juego";
-
+  }else{
+    recorreArray();
   }
 }
-  if (puedeSeguir=== true){
-    for (var i=1; i<=9; i++) {
-      if (document.getElementById("zelda" + i).innerHTML==""){
-        todasOcupadas=false;
-      } else { 
-        puedeSeguir = false;
-        document.getElementById("datos").innerHTML = "empate";
-      }
+
+function recorreArray(){
+    for (var i = 1; i <= 9; i++){
+      empate();
     }
   }
-  
- 
-  
 
-
-
-function victoria() {
-//va a determinar cual jugador gano dependiendo el turno. 
-//poner un gif encima del tablero.  
+function empate(){
+  if (puedeSeguir === true && document.getElementById("zelda" + i).innerHTML == "") {
+    todasOcupadas = false;
+  } else{
+    puedeSeguir = false;
+    document.getElementById("datos").innerHTML = "empate";
+  }
 }
