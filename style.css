@@ -21,3 +21,20 @@ h1{
     text-align: center;
     padding:4em;
 }
+
+#cartel {
+    position: absolute;
+    background-color: #f559f5;
+    display: none;
+    opacity: 1.5;
+    margin-left: 32%;
+}
+
+#ganador {
+    text-align: center; 
+    margin: 4em;
+}
+
+#reinicio {
+    margin-left: 12em;
+}
